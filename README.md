@@ -12,28 +12,30 @@ O métodos GET tem como função a obtenção de dados, para isso devemos passar
 
 Exemplo:
 
-    import requests                                                                                                                          resp = requests.get('https://todolist.example.com/tasks/')
+    import requests
+    
+    resp = requests.get('https://todolist.example.com/tasks/')
     
     
     
 Na primeira linha é importado o pacote requests que permite nos permite a utilização dos métodos, como o Get que é demostrado sua utilização acima para a obteção do que buscamos.
 
 
-O métodos DELETE tem como função a deletar dados, para isso devemos passar um caminho.                                                Exemplo:  
-    
-    import requests                                                                                                                         resp = requests.delete('https://todolist.example.com/tasks/<item_id>/')      
+O métodos DELETE tem como função a deletar dados, para isso devemos passar um caminho.                                                Exemplo:
+
+    import requests
+    resp = requests.delete('https://todolist.example.com/tasks/<item_id>/')      
 
 Na primeira linha é importado o pacote requests,e na segunda linha é utilizado o método DELETE, no qual é passado o caminho no qual ele vai ser aplicado. Os outros métodos básicos segue o mesmo modelo. 
 
-Mas que esse simples comandos não podemos ainda ver os dados "retornados", com isso segue o modelo de como poderemos melhorar nosso codigo e o retorno dos dados para visualização. No repositório possui um arquivo com o nome "ConsumindoApiPython", o qual tem a função de obter um cep válido e buscar dados básicos. Esse script pode servir de base. Obs: o usuário deve digitar o CEP a ser buscado.   
+Mas que esse simples comandos não podemos ainda ver os dados "retornados", com isso segue o modelo de como poderemos melhorar nosso codigo e o retorno dos dados para visualização. No repositório possui um arquivo com o nome "ConsumindoApiPython", o qual tem a função de obter um cep válido e buscar dados básicos. Esse script pode servir de base. Obs: o usuário deve digitar o CEP a ser buscado.
 
 
-import requests
-
-resp = requests.get('https://todolist.example.com/tasks/')
-if resp.status_code != 200:
-    # This means something went wrong.
-    raise ApiError('GET /tasks/ {}'.format(resp.status_code))
-for todo_item in resp.json():
-    print('{} {}'.format(todo_item['id'], todo_item['summary']))
+    import requests
+    resp = requests.get('https://todolist.example.com/tasks/')
+    if resp.status_code != 200:
+    
+        raise ApiError('GET /tasks/ {}'.format(resp.status_code))
+        for todo_item in resp.json():
+            print('{} {}'.format(todo_item['id'], todo_item['summary']))
 
