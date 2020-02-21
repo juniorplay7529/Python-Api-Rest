@@ -8,7 +8,27 @@ Depois de intalado o pacote podemos testar o pacote criando um script ou utiliza
 
 O módulo requests possui varios métodos, como, GET, POST, DELETE, PUT. Esses são alguns dos principais métodos, utilizados pelo protocolo de comunicação, o HTTP.
 
-O métodos GET tem como função a obtenção de dados, para isso devemos passar um caminho no qual ele fará a busca.                          Exemplo:                                                                                                                                        import requests                                                                                                                           resp = requests.get('https://todolist.example.com/tasks/')                                                                        Na primeira linha é importado o pacote requests que permite nos permite a utilização dos métodos, como o Get que é demostrado sua utilização acima para a obteção do que buscamos.                                                                                                                                                                                                                                                                                                                                                                          O métodos DELETE tem como função a deletar dados, para isso devemos passar um caminho.                                                Exemplo:                                                                                                                                        import requests                                                                                                                           resp = requests.delete('https://todolist.example.com/tasks/<item_id>/')                                                         Na primeira linha é importado o pacote requests,e na segunda linha é utilizado o método DELETE, no qual é passado o caminho no qual ele vai ser aplicado. Os outros métodos básicos segue o mesmo modelo.                                                                                                                                                                                                                Mas que esse simples comandos não podemos ainda ver os dados "retornados", com isso segue o modelo de como poderemos melhorar nosso codigo e o retorno dos dados para visualização. No repositório possui um arquivo com o nome "ConsumindoApiPython", o qual tem a função de obter um cep válido e buscar dados básicos. Esse script pode servir de base. Obs: o usuário deve digitar o CEP a ser buscado.                                                                                                                                                                                                                            import requests
+O métodos GET tem como função a obtenção de dados, para isso devemos passar um caminho no qual ele fará a busca.
+
+Exemplo:
+
+    import requests                                                                                                                          resp = requests.get('https://todolist.example.com/tasks/')
+    
+    
+    
+Na primeira linha é importado o pacote requests que permite nos permite a utilização dos métodos, como o Get que é demostrado sua utilização acima para a obteção do que buscamos.
+
+
+O métodos DELETE tem como função a deletar dados, para isso devemos passar um caminho.                                                Exemplo:  
+    
+    import requests                                                                                                                         resp = requests.delete('https://todolist.example.com/tasks/<item_id>/')      
+
+Na primeira linha é importado o pacote requests,e na segunda linha é utilizado o método DELETE, no qual é passado o caminho no qual ele vai ser aplicado. Os outros métodos básicos segue o mesmo modelo. 
+
+Mas que esse simples comandos não podemos ainda ver os dados "retornados", com isso segue o modelo de como poderemos melhorar nosso codigo e o retorno dos dados para visualização. No repositório possui um arquivo com o nome "ConsumindoApiPython", o qual tem a função de obter um cep válido e buscar dados básicos. Esse script pode servir de base. Obs: o usuário deve digitar o CEP a ser buscado.   
+
+
+import requests
 
 resp = requests.get('https://todolist.example.com/tasks/')
 if resp.status_code != 200:
